@@ -1,4 +1,8 @@
 /* Basic styling */
+.parent {
+  display: flex;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -6,8 +10,8 @@ body {
 }
 
 .container {
-  max-width: 400px;
-  margin: 0 auto;
+  min-width: 400px;
+  margin: 0 1rem;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
@@ -37,4 +41,11 @@ button {
 
 button:hover {
   background-color: #0056b3;
+}
+
+.loading-pane {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 15px;
 }
