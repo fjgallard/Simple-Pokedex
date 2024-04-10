@@ -2,6 +2,8 @@ import { createRoot } from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Form  from './Form'
 import List from "./List";
+import SelectedTypeContext from "./context/SelectedTypeContext";
+import { useState } from "react";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,19 +15,22 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
-
+  const selectedType = useState(null);
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="parent">
-        <div className="container">
-          <h2 className="title">Simple Pokedex</h2>
-          <Form />
-        </div>
+    <SelectedTypeContext.Provider value={selectedType}>
+      <QueryClientProvider client={queryClient}>
+        <div className="parent">
+          <div className="container">
+            <h2 className="title">Simple Pokedex</h2>
+            <Form />
+          </div>
 
-        <List />
-      </div>
-      
-    </QueryClientProvider>
+          <List />
+        </div>
+        
+      </QueryClientProvider>
+    </SelectedTypeContext.Provider>
+    
   )
 }
 
