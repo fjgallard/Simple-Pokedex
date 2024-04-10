@@ -24,7 +24,6 @@ const List = () => {
       img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${index}.png`
     }
   });
-  console.log(pokemonList);
   
   return (
     <div className="pokemon-list-container">
